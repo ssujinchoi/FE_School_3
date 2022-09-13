@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <form action="013.html" mehtod="GET">
+      <!-- 회원가입시 주민번호를 입력하면 자동으로 성별이 들어가는 경우 -->
+      <input type="text" name="성별" value="남" readonly /><br />
+      <input type="text" name="아이디" /><br />
+      <input type="text" name="test" minlength="10" /><br />
+      <input type="text" name="test" maxlength="10" /><br />
+      개인정보 동의해?
+      <input type="checkbox" name="test" maxlength="10" required /><br />
+      <input type="text" placeholder="통장잔고" name="test" required /><br />
+      <input
+        type="tel"
+        name="tlno"
+        id="tlno"
+        title="전화번호를 입력하세요."
+        placeholder="00*-000*-0000"
+        pattern="[0-9]{2,3}-[0-9]{3,4}-[0-9]{3,4}"
+        maxlength="13"
+      />
+      <button type="submit">회원가입</button>
+    </form>
+  </body>
+</html>
+
+<!-- 
+    클라이언트 <-> 서버
+    프로토콜(예를 들어 국가별 언어라고 생각해주시면 됩니다.)
+    http://www.paullab.co.kr
+    https://www.paullab.co.kr 
+-->

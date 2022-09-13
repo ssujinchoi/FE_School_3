@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>hello</h1>
+    <!-- *3가지 차이점* -->
+    <!-- 스크린 리더가 읽지 않습니다. 일부러 alt값을 안줄 때도 있다.-->
+    <img src="jeju.jpg" alt="" />
+    <!-- 스크린 리더가 'a'를 읽습니다. -->
+    <img src="jeju.jpg" />
+    <!-- 스크린 리더가 '이미지'를 읽습니다. -->
+    <img src="jeju.jpg" alt="이미지" />
+    <!-- alt를 이미지라고만 쓰면 안좋은 설명이다.-->
+
+    <!-- *img경로* -->
+    <!-- 상대경로 : 현재 폴더에 jeju.jpg -->
+    <img src="./jeju.jpg" alt="이미지" />
+    <!-- 상대경로 : 상위 폴더 > img폴더 > jeju.jpg -->
+    <img src="../jeju.jpg" alt="이미지" />
+    <!-- 절대경로 -->
+    <img src="/Users/choisujin/FE3/HTML/jeju.jpg" alt="이미지" />
+
+    <!-- 해상도에 따른 이미지를 로딩 -->
+    <img
+      width="200px"
+      srcset="img/logo_1.png 2x, img/logo_2.png 3x"
+      src="jeju.jpg"
+      alt="test"
+    />
+  </body>
+</html>

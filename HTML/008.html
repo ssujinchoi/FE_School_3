@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <!-- <picture> 요소는 <source> 요소와 <img> 요소를 통해 각기 다른 디스플레이 혹은 디바이스에 따라 조건에 맞는 이미지를 보여주는 요소입니다. <img> 요소의 srcset 이 화면에 따른 이미지의 크기를 조절한다면 <picture> 요소는 이미지 포맷 자체를 변경 할 수 있습니다. 
+    실무에선 보통 css로 처리한다.  
+    -->
+    <picture>
+      <source srcset="./sample/a.jpg" media="(min-width:960px)" />
+      <source srcset="./sample/b.jpg" media="(min-width:620px)" />
+      <img src="./sample/c.jpg" alt="귀여운 아기 팽귄들" />
+      <!-- img요소는 꼭 설정해야한다 -->
+
+      <!-- 점진적 향상기법
+기본적으로 예전 기술 환경에서 동작할 수 있는 기능을 구현해두고, 최신 기술을 사용할 수 있는 환경에서는 최신 기술을 제공하여 더 나은 사용자 경험을 제공할 수 있는 방법입니다. -->
+    </picture>
+  </body>
+</html>

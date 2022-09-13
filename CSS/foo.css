@@ -1,0 +1,85 @@
+@font-face {
+  font-family: "RixInooAriDuriR";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2")
+    format("woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  border: 1px solid black;
+  font-family: "RixInooAriDuriR";
+}
+
+/* 로컬 : 
+  - 단점 : 트래픽 확장이 어려움, 서버 확장이 어렵고, 들어오는 트래픽 제한(대역폭 bandwidth의 문제), 정전(클라우드 서버 같은 경우 UPS)
+  - 장점 : 비용(전기세 + 인터넷)
+
+클라우드 :
+  - 단점 : 비용
+  - 장점 : 서버 확장이 쉽다. 이전도 쉽다. IP를 할당 받거나, 도메인 연결하기 쉽고, HTTPS 인증도 쉽고......
+
+
+Server : 서빙(24시간 돌아가는 컴퓨터, 대부분 IP 연결)
+Web Server : 정적 파일을 서빙(PHP와 같은 프로그래밍 언어도 처리하긴 합니다...)
+App Server : 두뇌 역활
+DB : 데이터 저장(이미지와 같은 경우에는 이미지 경로만 저장합니다. 그럼 이미지는? 보통 스토리지에 저장되어 있습니다. 이미지를 DB에 저장할 경우)
+API Server : 카페에 카운터 직원입니다. 여러분이 커피를 내릴 필요는 없습니다. 예를 들어 윈도우 API reference 책을 사용하시면 메모장같은 앱을 만드실 수 있는데, 저장과 같은 기능을 직접 구현할 필요가 없습니다.
+
+
+GET : URL로 데이터를 전달할 때 사용(file같은 큰 파일은 GET으로 전송하지 않습니다. id와 pw와 같은 민감 데이터X)
+POST : 패킷 안에 데이터를 넣어 전달 할 때 사용합니다.(민감 데이터 O, 큰 데이터 O)
+
+
+http://www.jejuiucc.or.kr/default/Bd/view.php?btable=notice&bno=447&p=1&lcate=
+http://www.jejuiucc.or.kr/default/Bd/view.php?btable=notice&bno=448&p=1&lcate=
+http://www.jejuiucc.or.kr/default/Bd/
+
+개발되어 있는 바퀴를 새로 만들지 말라
+
+
+---
+
+server : https://www.notion.so/paullabworkspace/Server-3407cda084294d8a829ebc9e0ad46ede
+API Server : https://www.notion.so/paullabworkspace/API-API-Server-bab406c7453b4654a183a03bcf8dac96
+
+---
+
+클라이언트 < - > 서버
+
+프로토콜(예를 들어 국가별 언어라고 생각해주시면 됩니다.)
+http://www.paullab.co.kr
+https://www.paullab.co.kr
+
+---
+
+목적 + 보안
+POST로도 불러올 수 있습니다.
+
+---
+
+url로 데이터를 전달할 것이냐? -> get 방식
+url에 데이터가 노출되면 안되는 것이냐? -> post 방식
+
+---
+
+querystring : https://www.notion.so/paullabworkspace/WHATWG-URL-s-origin-property-de2eed15f8ef4688ba4b089c9e7e2d0a
+
+?name=hojun&tel=01050442903&email=paul-lab%40naver.com&agree=on
+%40이란?
+
+---
+
+fieldset legend의 예제
+https://github.com/paullabkorea/FrontendSchool_1/tree/main/html
+
+---
+
+스피너 UI
+
+---
+
+폰트 트래픽 문제
+1. 잘 사용되지 않는 폰트는 이미지화
+2. 많이 사용되지 않는 폰트는 경량화
+3. 많이 사용되는 폰트는 CDN을 사용하기 보다는 내부 API 서버나, 로컬 서버에서 서빙 */

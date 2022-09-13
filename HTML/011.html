@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- <audio controls>
+        <source src="flow.ogg" type="audio/ogg">
+        <source src="flow.mp3" type="audio/mpeg">
+    </audio> -->
+
+    <!-- 크롬같은경우는 auto play가 막혀있어서 autoplay 옵션이랑 mute옵션을 같이사용해야 자동재생이 된다-->
+    <audio controls autoplay loop class="bgm">
+        <source src="https://drive.google.com/uc?export=download&id=1xbevC0q-fNUDuoFCSLUdot0OIO81LgpE" type="audio/mp3" >
+    </audio>
+
+    <video src="asset/video/pwa.mp4" 
+    controls autoplay loop 
+    width="450" 
+    height="300"></video>
+
+    <!-- 1. 순간 트래픽 부하분산 100명의 동접자 
+        2. 월간 트래픽(비용) 관리 측면
+    3G(3000명 접속하면 뻗는다...)-->
+
+    <!-- 
+    - preload : 좋은 사용자 경험을 위해 고려해 볼 수 있는 속성입니다. (기본 값은 브라우저마다 다릅니다.)
+        - none : 비디오 파일을 미리 로딩하지 않습니다. 서버가 최소한의 트래픽을 유지하며 페이지 로딩이 좀 더 빨라집니다.
+        - metadata : 비디오 파일을 미리 로딩하지 않지만 파일의 메타데이터(예를 들어서 영상의 길이)를 미리 가져오도록 합니다.
+        - auto : 비디오 파일을 미리 로딩하여 사용자가 바로 영상을 볼 수 있도록 준비합니다.
+     -->
+</audio>
+</body>
+</html>
