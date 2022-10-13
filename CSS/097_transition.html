@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Transition Test</title>
+  <style>
+    div{
+        font-size: 16px;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        /* transition이란 CSS 속성값이 변할 때, 값의 변화가 일정 시간에 걸쳐 일어나도록 하는 것을 말합니다 */
+        transition: 1000ms;
+        /*transition-delay: 2s; 2초 후에*/
+        /*transition-duration: 1s;*/
+        /*transition-property: background-color, font-size;*/
+
+        /*transition-timing-function: linear;*/
+        /*transition-timing-function: steps(3, start);*/
+        /*transition-timing-function: steps(3, end);*/
+
+    }
+
+    div:hover{
+        font-size: 32px;
+        width: 300px;
+        height: 300px;
+        background-color: blue;
+      
+    }
+  </style>
+</head>
+<body>
+  <div>hello world</div>
+</body>
+</html>

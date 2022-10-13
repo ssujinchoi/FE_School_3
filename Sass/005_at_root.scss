@@ -1,0 +1,11 @@
+.one {
+  background: yellow;
+  .two {
+    font-size: 20px;
+    // three를 빼내고 싶을 때 - 가독성을 유지하지만 잘 쓰지는 않는다.
+    // 부모요소의 속성은 상속되지 않는다.
+    @at-root .three {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+            // 할당되기 전의 값, 각각의 타입마다 리터럴이 있다.
+            // 객체는 값의 이름을 가지고 있다. 키+값 쌍을 프로퍼티라고 한다.
+            let myObjc = {
+              val1: 10,
+              val2: 30,
+            }.length;
+
+            //배열을 생성자 함수로 생성할 때,
+            //인자를 한 개만 넣으면 배열의 길이
+            //두개 이상 넣으면 원소
+
+            // let fruit = (["메론", "수박"], ["포도", "체리"]);
+
+            // // 배열안 배열일때 ([].[])
+            // let fish = ["정어리", "고등어", "참치"]
+            // //일반적 배열 방법 []
+            // let myobj = { val1: 10, val2: 30 }
+            // //키와 value가 있을때 {}
+
+            let myarry = [];
+
+            let myArray = new Array(5);
+
+            console.log(myArray);
+
+            let myArray2 = new Array(5, 3, 2);
+            console.log(myArray2);
+
+            myArray2[0] = 100;
+            "hello"[2];
+
+            // 생성과 동시에 접근 가능
+            console.log([1, 2, 3, 4][2]);
+
+            const cafe = ["coffe", "cake", "tea"];
+
+            //  배열의 앞에 원소 추가
+            cafe.unshift("bread");
+            //  배열의 앞 원소 삭제
+            cafe.shift();
+
+            // 특정한 인덱스에 요소를 위치시키는 splice()
+            cafe.splice(1, 0, "bread"); // 추가할 인덱스, 삭제할 개수, 추가할 내용
+
+            let fish = ["정어리", "고등어", "돌고래", "참치", "고래상어", "코끼리"];
+            console.log(fish.slice(2, 3));
+            console.log(fish.slice(5));
+            let fish2 = "dddd";
+
+            map메소드를 이용해서 name의 값들을 원소로 하는 새로운 배열을 만들어 봅시다!
+
+            var studentList = [
+                  {
+                      id: 1, name: '원범', score: 'great'
+                  },
+                  {
+                      id: 2, name: '김진', score: 'nice'
+                  },
+                  {
+                      id: 3, name: '혜원', score: 'good'
+                  },
+                  {
+                      id: 4, name: '재현', score: 'too cool for school'
+                  }
+              ]
+
+
+      const arrNum = [13, 9, 10, 2];
+      let arrNum_test = [13, 9, 19, 2];
+      let test2 = [...arrNum_test].sort();   // 원본을 만지지 않음
+
+      console.log(arrNum_test);  // [ 13, 9, 19, 2 ]
+      console.log(test2);  //  [ 13, 19, 2, 9 ]
+    </script>
+  </body>
+</html>

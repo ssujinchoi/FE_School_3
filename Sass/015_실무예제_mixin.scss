@@ -1,0 +1,30 @@
+$url: "./assets/img";
+
+@mixin thumb($total, $img, $type) {
+  @for $i from 1 through $total {
+    li:nth-child(#{$i}) .thumb {
+      background-image: url(#{$url} + #{$img} + #{$i} + '.' + #{$type});
+    }
+  }
+}
+@include thumb(10, "background", "png");
+
+@mixin circleBase {
+  display: block;
+  border-radius: 50%;
+  -ms-border-radius: 50%;
+  -webkit-border-radius: 50%;
+}
+
+@mixin circle($size, $color: null) {
+  //  $size: unitCheck($size); px이 없으면 붙여서 지역변수로 다시 선언
+  @include circleBase;
+  width: $size;
+  height: $size;
+  background-color: $color;
+}
+
+// 회사 믹스인을 맘대로 바꿀 수 없으니 믹스인에 맞게 경로를 짜라
+.profile {
+  @include circle(100px, red);
+}

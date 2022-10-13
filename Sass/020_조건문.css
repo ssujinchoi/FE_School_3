@@ -1,0 +1,41 @@
+.one {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.two {
+  width: 10;
+  height: 10;
+  background-color: red;
+  border-radius: 5;
+}
+
+.three {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.four {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 3px;
+}
+
+.five {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 5px;
+}
+
+.six {
+  width: 10px;
+  height: 10px;
+  background-color: red;
+  border-radius: 3px;
+}/*# sourceMappingURL=020_조건문.css.map */

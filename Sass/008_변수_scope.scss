@@ -1,0 +1,55 @@
+.info {
+  $line-normal: 1.34; // 지역변수
+  font-size: 15px;
+  line-height: $line-normal;
+  text-align: right;
+  span {
+    line-height: $line-normal;
+  }
+}
+
+// step1
+// $line-normal은 지역변수이므로 불러올 수 없다. 즉 에러남
+//.one {
+//  line-height: $line-normal;
+//}
+
+//step2
+// 지역변수는 다른지역에서 동일 이름으로 써도됨
+//.one {
+//  $size: 12px;
+//  font-size: $size;
+//  .three {
+//    // 12px
+//    font-size: $size;
+//  }
+//}
+
+//.two {
+//  $size: 14px;
+//  font-size: $size;
+//  .three {
+//    // 14px
+//    font-size: $size;
+//  }
+//}
+
+//step3
+//.one {
+//  $size: 12px !global; // 강제로 변수를 만드는 것은 권하지 않습니다.
+//  font-size: $size;
+//}
+
+//.two {
+//  font-size: $size;
+//}
+
+//step4 - 질의응답
+.one {
+  $size: 12px; // 강제로 변수를 만드는 것은 권하지 않습니다.
+  font-size: $size;
+}
+
+//.two {
+//  font-size: $size;
+//}

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>논리연산자</title>
+  </head>
+  <body>
+    <script>
+      let couponlist = ["c7da932", "c7da933", "c7da934"];
+      user = [
+        {
+          userid: 1,
+          username: "hojun",
+          coupon: couponlist[0],
+          쿠폰사용가능여부: !!couponlist[0], //  변수로 직접 boolean 값을 나타내고 싶을 때 쓴다
+        },
+      ];
+
+      // true : 1
+      // false : 0
+      // and(&&) : 곱
+      // or(||) : 합
+      // not(!) : 부정
+
+      // 단락평가
+      console.log(true || false); // true
+      console.log(true || true); // true
+      console.log(true && false); // false
+      console.log(!false); // true
+      console.log(!!false); // false 실무에서도 정말 많이 사용
+      console.log(!!""); // false
+      console.log(!![]); // JS에서만 true
+      console.log(""); // typeof > string
+      console.log(!!""); // typeof > boolean으로 변경
+
+      console.log("---------");
+      console.log("confuse_1");
+      console.log("false" == false);
+      console.log(!"false"); // false
+      console.log(!"0"); // false
+      console.log("abc" / 1); // NaN
+      console.log(!!NaN); // not a number - false
+      console.log(!!null); // false
+      console.log(!!undefined); // false
+
+      console.log("-----------------"); // false
+      // 단락평가(간단한 코드에서 권고합니다.)
+      username = "";
+      username = username || "이름을 입력하지 않으신 분";
+      console.log(username); // 이름을 입력하지 않으신 분
+
+      username = "abc";
+      username = username || "이름을 입력하지 않으신 분";
+      console.log(username); // abc
+
+      // 문제
+      // username도 입력하고 pw도 입력해야만 회원가입 성공여부가 true, false가 나오게...
+      // 둘 중에 1개라도 입력이 안되면 false가 나와야한다.
+      username = "";
+      pw = "";
+      회원가입성공여부 = username && pw;
+      console.log("회원가입성공여부" + !!회원가입성공여부);
+
+      // 정답 리스트
+      회원가입성공여부 = username && pw ? true : false; // 3항 연산자 사용
+      회원가입성공여부 = !!(username && pw);
+      회원가입성공여부 = !!username && !!pw;
+
+      console.log("-------------");
+      console.log("드모르간 법칙"); // 코드를 줄이는데 간혹 사용된다.
+      회원가입성공여부 = !(!username || !pw); // 드모르간의 법칙 ||이 &&으로 바뀐다.
+      // or : ||
+      // and : &&
+      const x = 0;
+      const y = 1;
+      console.log(!(x || y) === (!x && !y));
+      console.log(!(x && y) === (!x || !y));
+
+      // 참고로 알면 좋은 것.
+      console.log("-----참고사항----");
+      username = "";
+      username = username || false;
+      console.log(username);
+
+      username = "";
+      username = username || false;
+      console.log(username);
+
+      // 알고리즘 문제
+    </script>
+  </body>
+</html>

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>bool</title>
+  </head>
+  <body>
+    <script>
+      // const(참조 변경 불가-값 변경 불가 아님), let(변경 가능), var(쓰지마세요. scope를 강제하지 않아서 견고하지 않다.)
+      let one = true; // 다른 언어는 True인 경우도 있다.
+      let two = false;
+      let three; // undefined
+      let four = null;
+      let five = Infinity; // 비교할 때 자주 사용
+
+      console.log(Boolean("")); // 문자열이 아무것도 없는 것은 false
+      console.log(Boolean(" ")); // 공백이 하나 있으므로 true
+      console.log(Boolean(0)); // 0은 false로 평가됨
+      console.log(Boolean(100)); // 0외에 다른 숫자는 true
+      console.log(Boolean(-100)); // 0외에 다른 숫자는 true
+      console.log(Boolean(three)); // false
+      console.log(Boolean(four)); // false
+      console.log(Boolean(five)); // true
+
+      //  one = ""; // world
+      //  one = " "; // hello
+      one = 0; // world
+
+      // 우리를 힘들게 하는 JS
+      console.log(Boolean([])); // true; //  태생이 그렇다.
+      console.log(Boolean({})); // true;
+
+      if (one) {
+        consol.log("hello");
+      } else {
+        console.log("world");
+      }
+    </script>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transition Test</title>
+    <style>
+        .box {
+            width: 100px;
+            height: 100px;
+            background-color: dodgerblue;
+            transition: all 1s;
+
+            /* 기준점 */
+            transform-origin: bottom right;
+        }
+
+        .box:hover {
+            /* scale의 기준은 중간 즉, center, center이다 */
+            /*transform: scale(2);*/
+            /*transform: rotate(360deg) scale(2);
+            transform: translate(100px, 100px);*/
+            /*transform: translateX(100px);*/
+            /*transform: translateY(200px);*/
+            /*transform: skew(40deg); X,Y가능*/
+
+            transform: rotate(180deg);
+            
+        }
+    </style>
+</head>
+<body>
+    <div class="box">hello world</div>
+</body>
+</html>

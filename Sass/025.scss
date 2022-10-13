@@ -1,0 +1,9 @@
+$sujin: 10;
+@while $sujin > 1 {
+  $sujin: $sujin - 2;
+  .content-#{$sujin} {
+    width: 100px;
+    height: 100px;
+    background: red;
+  }
+}

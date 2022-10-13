@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>console설명</title>
+  </head>
+  <body>
+    <script>
+      console.log("hello");
+
+      let data = {
+        one: 1,
+        two: 2,
+        three: 3,
+      };
+      console.dir(data);
+
+      let data2 = [10, 20, 30];
+      console.dir(data2);
+
+      //  console.info("hello world");
+      console.group("one");
+      console.log("호준/팀원");
+      console.log("유정/팀원");
+      console.log("혜연/팀원");
+
+      console.group("two");
+      console.log("태수/팀장");
+      console.log("슬기/팀장");
+      console.groupEnd();
+      console.log("end");
+      console.groupEnd();
+      console.log("end");
+
+      console.table(data);
+      console.error("정신차렷");
+      console.warn("실행은 해줄게, 다만 경고문구는 읽어봐");
+
+      // 잊으셔도 됩니다.
+      // 개발자 소통이나, 내 코드를 확인하기 위해서
+      console.log("%chello world", "color:red;font-size:32px");
+    </script>
+  </body>
+</html>

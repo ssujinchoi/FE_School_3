@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .container {
+            display: flex;
+            /* 1. flex-direction: column; */
+
+            /* 4. 넓이를 다 포함하지 못할 때에는 개행합니다. */
+            flex: wrap;
+        }
+        .item {
+            background-color: aqua;
+            border: 1px solid black;
+        }
+        .item:nth-child(2) {
+            /* 1. basis는 항상 넓이가 아니다. 주 축에 따라 basis가 넓이or높이가 된다. */
+
+            /* 2. 2개의 값이 있었을 때 basis의 값을 우선 */
+            /*flex-basis: 150px;
+            width: 100px;*/
+
+            /* 3. width의 값은 넓이를 강제합니다. */
+            width: 100px;
+            flex-basis: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="item">1</div>
+        <div class="item">22222222222222222222222222222222222222</div>
+        <div class="item">3</div>
+        <div class="item">4</div>
+        <div class="item">5</div>
+    </div>
+</body>
+</html>
