@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>설문조사</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <form id="mainForm">
+        <!-- form안의 내용을 그룹화 -->
+        <!-- fieldset은 block-format-context를 생성한다. bfc영역 -->
+        <fieldset>
+            <!-- legend는 fieldset안에서 첫 번째 자식으로 작성되어야한다. -->
+            <!-- https://html.spec.whatwg.org/multipage/rendering.html#rendered-legend 
+                어떤 조건이 갖춰지면 legend는 fieldset의 padding을 무시함-->
+            <legend>JS 스터디 모집 설문조사</legend>
+            <progress max="100" value="0" class="bar-progress"></progress>
+            <p class="msg-notice">설문지를 작성해주세요!</p>
+
+            <label for="q1">질문1. 무엇을 가장 배우고 싶으세요?</label>
+            <input type="text" id="q1" required>
+            <label for="q2">질문2. 시간은 언제가 적당한가요?</label>
+            <input type="text" id="q2" required>
+            <label for="q3">질문3. 몇 시간정도 예상하세요?</label>
+            <input type="text" id="q3" required>
+            <label for="q4">질문4. 난이도를 조정한다면?</label>
+            <input type="text" id="q4" required>
+            <label for="q5">질문5. 끝으로 하고 싶은 말이 있나요?</label>
+            <input type="text" id="q5" required>
+
+            <button type="submit">제출하기</button>
+            <button type="reset">초기화</button>
+        </fieldset> 
+    </form>
+
+    <script>
+        const mainForm = document.querySelector('#mainForm')
+        const progressBar= mainForm.querySelector('.bar-progress')
+        const msg = mainForm.querySelector('.msg-notice')
+        const inputs = mainForm.querySelectorAll('input')
+        const btnReset = mainForm.querySelector('button[type="reset"]')
+
+        // 유효한 input의 갯수를 저장
+        
+        mainForm.addEventListener('keyup', () => {
+            //let validCounter = 0;
+
+            //inputs.forEach((item) => {
+            //    // validity - 요소안에 있는 값이 유효한지 아닌지를 알려주는 여러가지 정보가 들어있다.
+            //    //console.log(item.validity)
+            //    console.log('유효갯수', validCounter)
+            //    if(item.validity.valid){
+            //        console.log('여기왔니?')
+            //        validCounter++;
+            //    }
+            //})
+
+            //const result = [...inputs].filter((item) => {
+            //    return item.validity.valid
+            //})
+                
+            //const result = Array.from(inputs).filter((item) => {
+                //    return item.validity.valid
+                //})
+                    
+            // nodeList에는 filter메서드가 없다. 따라서, array의 call을 통해 메서드를 빌려온다.
+            const result = Array.prototype.filter.call(inputs, (item) => {
+                return item.validity.valid
+            })
+            
+            console.log(result)
+
+            switch(result.length) {
+                case result.length:
+                    msg.textContent = '좋습니다. 계속 진행하세요!'
+                    progressBar.setAttribute('value', '20')
+                    break;
+                case result.length:
+                    msg.textContent = '좋은 답변이군요!'
+                    progressBar.setAttribute('value', '40')
+                    break;
+                case result.length:
+                    msg.textContent = '절반 이상 지났습니다. 계속 진행하세요~'
+                    progressBar.setAttribute('value', '60')
+                    break;
+                case result.length:
+                    msg.textContent = '마지막 한 질문만 남았네요 ㅎㅎ'
+                    progressBar.setAttribute('value', '80')
+                    break;
+                case result.length:
+                    msg.textContent = '모든 질문이 완료되었습니다.'
+                    progressBar.setAttribute('value', '100')
+                    break;
+                default:
+                    msg.textContent = "설문지를 작성해주세요!"
+                    progressBar.setAttribute('value', 0)
+            }
+
+        })
+        
+        btnReset.addEventListener('click', () => {
+            msg.textContent = "설문지를 작성해주세요!"
+            progressBar.setAttribute('value', 0)
+        })
+        </script>
+</body>
+</html>

@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>제코베 스토어 관리자 페이지</title>
+        <!--<link rel="stylesheet" href="https://unpkg.com/mvp.css@1.12/mvp.css" />-->
+    </head>
+    <body>
+        <main>
+            <button id="getProducts">상품불러오기</button>
+
+            <br />
+            <label for="one">상품이름</label>
+            <input id="one" type="text" />
+
+            <br />
+            <label for="two">제품가격</label>
+            <input id="two" type="number" />
+
+            <br />
+            <label for="three">출시날짜</label>
+            <input id="three" type="date" />
+
+            <br />
+            <label for="four">재고</label>
+            <input id="four" type="number" />
+
+            <button type="button" id="regiProduct">상품등록하기</button>
+        </main>
+        <script>
+           const getBtn = document.querySelector("#getProducts")
+           const regiBtn = document.querySelector("#regiProduct")
+
+           // 상품 불러오기
+           getBtn.addEventListener("click", () => {
+                
+                fetch('http://localhost:3001/product', {
+                    method: "GET"
+                })
+                .then(response => response.json())
+                .then(data => {
+                    for (const i of data) {
+                        const container = document.createElement('section')
+                        const productName = document.createElement('h2')
+                        const price = document.createElement('p')
+                        const updateBtn = document.createElement('button')
+                        
+                        productName.innerText = i.productName
+                        price.innerText = i.price 
+                        updateBtn.innerText = "수정"
+                        updateBtn.setAttribute('type', 'button')
+                        updateBtn.setAttribute('id', 'update')
+                        
+                        container.append(productName, price, updateBtn)
+                        document.querySelector('main').appendChild(container)
+
+                    }
+                })
+                .catch(error => console.error("실패 : ", error))
+           })
+
+           // 상품 등록하기 
+           regiBtn.addEventListener("click", () => {
+
+                const productInfo = {
+                    //"id": 9,
+                    "productName": document.querySelector("#one").value,
+                    "price": document.querySelector("#two").value,
+                    "stockCount": document.querySelector("#four").value,
+                    "viewCount": 0,
+                    "pubDate": document.querySelector("#three").value,
+                    "modDate": document.querySelector("#three").value
+                }
+                
+                fetch("http://localhost:3001/product", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(productInfo),
+                })
+                .then((response) => response.json())
+                .then(data => {
+                    //const container = document.createElement('section')
+                    //const productName = document.createElement('h2')
+                    //const price = document.createElement('p')
+                    //const updateBtn = document.createElement('button')
+                    
+                    //productName.innerText = data.productName
+                    //price.innerText = data.price 
+                    //updateBtn.innerText = "수정"
+                    //updateBtn.setAttribute('type', 'button')
+                    //updateBtn.setAttribute('id', 'update')
+                    
+                    //container.append(productName, price, updateBtn)
+                    //document.querySelector('main').appendChild(container)
+
+                    
+                })
+                .catch((error) => {
+                    console.error("실패:", error);
+                });
+           })
+
+        </script>
+    </body>
+</html>

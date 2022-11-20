@@ -1,0 +1,9 @@
+total 24
+drwxr-xr-x   8 choisujin  staff  256 Nov  9 13:46 .
+drwxr-xr-x@ 13 choisujin  staff  416 Nov  9 13:22 ..
+-rw-r--r--   1 choisujin  staff    0 Nov  9 13:23 001.html
+-rw-r--r--   1 choisujin  staff    0 Nov  9 13:23 002.html
+-rw-r--r--   1 choisujin  staff   12 Nov  9 13:32 003.txt
+-rw-r--r--   1 choisujin  staff    0 Nov  9 13:46 result.txt
+-rw-r--r--   1 choisujin  staff   12 Nov  9 13:41 test.txt
+-rw-r--r--   1 choisujin  staff   12 Nov  9 13:43 test2.txt

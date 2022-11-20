@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- 쇼핑몰에 들어왔는데 vip회원으로 로그인 되어 있을 경우에만 가격 혜택을 받을 수 있는 경우 -->
+    <figure>
+        <img src="" alt="">
+        <figcaption>
+            상품가격 : 39,900원<span class="hidden">(주의)VIP회원이 아니시라면 혜택을 받으실 수 없슈</span>
+        </figcaption>
+    </figure>
+
+    <script>
+        const txt = document.querySelector('figcaption')
+        console.log(txt.textContent)
+        console.log(txt.innerText)
+        console.log(txt.innerHTML)
+    </script>
+</body>
+</html>

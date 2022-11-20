@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+    <style>
+      div {
+        width: 200px;
+        height: 200px;
+        background-color: blue;
+        transition: 0.3s;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <script>
+      const box = document.querySelector(".box");
+
+      let i = 0;
+      document.addEventListener("keydown", (event) => {
+        if (event.keyCode == 37) {
+          box.style.transform = `translateX(${--i}px)`;
+        } else if (event.keyCode == 39) {
+          box.style.transform = `translateX(${++i}px)`;
+        }
+      });
+
+      /////////// 강사님 로직
+      //  const target = document.querySelector(".target");
+      //  let pos = 0;
+
+      //  document.addEventListener("keydown", move);
+
+      //  function move(event) {
+      //    const keyName = event.key;
+      //    if (keyName === "ArrowRight") {
+      //      pos += 5;
+      //      target.style.transform = `translateX(${pos}px)`;
+      //    }
+      //    if (keyName === "ArrowLeft") {
+      //      pos -= 5;
+      //      target.style.transform = `translateX(${pos}px)`;
+      //    }
+      //  }
+    </script>
+  </body>
+</html>

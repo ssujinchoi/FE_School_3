@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+            // 통상 props로 받지만, 꼭 이름이 props일 필요는 없다.
+            function Introduce(props) {
+                console.log(props);
+                return (
+                    <div>
+                        <h2>제 이름은 {props.name}</h2>
+                        <p>제 나이는 {props.age}</p>
+                        <p>제 잔고은 {props.money}</p>
+                        <p>제 집은 {props.house}</p>
+                        <p>제 커피취향은 {props.coffee}</p>
+                    </div>
+                )
+            }
+
+            function Introduce2(props) {
+                return (
+                    <div>
+                        <h2>제 이름은 {props.name}</h2>
+                        <p>제 나이는 {props.age}</p>
+                        <p>제 잔고은 {props.money}</p>
+                        <p>제 집은 {props.house}</p>
+                        <p>제 커피취향은 {props.coffee}</p>
+                    </div>
+                )
+            }
+
+            // js문법 객체의 구조분해 할당
+            function Introduce3({name, age, money, house, coffee}) {
+                return (
+                    <div>
+                        <h2>제 이름은 {name}</h2>
+                        <p>제 나이는 {age}</p>
+                        <p>제 잔고은 {money}</p>
+                        <p>제 집은 {house}</p>
+                        <p>제 커피취향은 {coffee}</p>
+                    </div>
+                )
+            }
+  
+            const app = (
+                <main>
+                    <Introduce name='sujin' age='20' money='1000000' house='멋사하우스' coffee='안좋아해'/>
+                    <Introduce name='sujin' age='20' money={1000} house='멋사하우스' coffee='안좋아해'/>
+                    {Introduce({
+                        name: 'sujin2',
+                        age: '22',
+                        money: '1200',
+                        house: '멋사기숙사',
+                        coffee: '카푸치노'
+                    })}
+                    <Introduce2 name='jiny' age='20' money={1000} house='멋사하우스' coffee='얼죽아'/>
+                    <Introduce3 name='jiny' age='20' money={1000} house='멋사하우스' coffee='뜨죽뜨'/>
+                </main>
+            )
+
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>

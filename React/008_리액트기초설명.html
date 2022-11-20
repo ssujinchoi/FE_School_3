@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8" />
+        <title>리액트 1분만에 추가해보기!</title>
+    </head>
+    <body>
+        <div id="root"></div>
+        <script
+            src="https://unpkg.com/react@17/umd/react.development.js"
+            crossorigin
+        ></script>
+        <script
+            src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"
+            crossorigin
+        ></script>
+        <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
+        <script type="text/babel">
+
+            // 함수형태
+            function Hello() {
+                return <h1>hello world 1</h1>
+            }
+
+            // 변수 형태
+            const Hello2 = <h2>hellow world 2</h2>
+            
+            /*
+            react의 핵심 - 여러개의 컴포넌트들을 만들어 조립식으로 만들겠다
+            리액트는 js문법을 순수하게 사용하지 않는다. -> 더 편하게 해준다.
+            단, 복잡도가 커지고 생산속도가 느림 - 컴포넌트화 되어있어 유지보수에 용이하므로 큰 규모에 유리. 소규모에는 리액트를 쓰기엔 헤비하다.
+            <->
+            Vue.js는 간결하고 생산속도가 빠름
+            */
+            // <Hello2/>의 형태는 함수나 클래스형태만 가능 변수는 {}사용
+            // {}안에는 js코드 가능
+            // {Hello2} , {Hello()}
+
+            const app = (
+                <div>
+                    {/*JSX문법으로 js + xml*/}
+                    <Hello />
+                    <Hello />
+                    <Hello />
+                    {Hello2}
+                    {Hello()}
+                </div>
+            )
+
+            const domContainer = document.querySelector("#root");
+            ReactDOM.render(app, domContainer);
+        </script>
+    </body>
+</html>

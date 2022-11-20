@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <style>
+        .canvas {
+            width: 500px;
+            height: 500px;
+            background-color: black;
+            margin: 0 auto;
+        }
+
+        ul {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+        
+        .canvas.red-bg {
+            background-color: red;
+        }
+      
+        .canvas.yellow-bg {
+            background-color: yellow;
+        }
+        
+        .canvas.green-bg {
+            background-color: green;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="canvas"></div>
+    <ul>
+        <li>
+            <button type="button" class="btn-red">빨강</button>
+        </li>
+        <li>
+            <button type="button" class="btn-yellow">노랑</button>
+        </li>
+        <li>
+            <button type="button" class="btn-green">초록</button>
+        </li>
+    </ul>
+
+    <script>   
+    //https://developer.mozilla.org/ko/docs/Web/Events 이벤트 참조
+        const canvas = document.querySelector('.canvas');
+
+        const redBtn = document.querySelector('.btn-red');
+        const yellowBtn = document.querySelector('.btn-yellow');
+        const greenBtn = document.querySelector('.btn-green');
+
+        btnArr = [redBtn, yellowBtn, greenBtn];
+
+        btnArr.forEach(item => {
+            item.addEventListener('click', () => {
+                canvas.classList.remove('red-bg', 'yellow-bg', 'green-bg');
+
+                if(item.classList.contains('btn-red')) {
+                    canvas.classList.add('red-bg');
+                } else if (item.classList.contains('btn-yellow')) {
+                    canvas.classList.add('yellow-bg');
+                } else if (item.classList.contains('btn-green')) {
+                    canvas.classList.add('green-bg');
+                }
+            })
+        });
+
+        //redBtn.addEventListener('click', () => {
+        //    canvas.classList.add('red-bg');
+        //    canvas.classList.remove('yellow-bg', 'green-bg');
+        //})
+
+        //yellowBtn.addEventListener('click', function(){
+        //    canvas.classList.remove('red-bg', 'green-bg');
+        //    canvas.classList.add('yellow-bg');
+        //})
+
+        //greenBtn.addEventListener('click', function(){
+        //    canvas.classList.remove('red-bg', 'yellow-bg');
+        //    canvas.classList.add('green-bg');
+        //})
+    </script>
+</body>
+</html>
+<!-- 
+    canvas.classList = "canvas" 하면 canvas만 남고 초기화 되나요?? 알아보자
+    모던 자바스크립트를 보자
+    || 연산자 - truty한값 둘다 아니면 falsy
+    && 연산자 - 처음 만나는 falsy 또는 다 맞았을땐 가장 마지막 truthy
+ -->

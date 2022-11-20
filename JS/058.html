@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p></p>
+    <script>
+        const name = "john";
+        const txt = document.querySelector('p');
+        txt.innerHTML = name;
+
+
+
+        // 브라우저 자체에서 innerHTML에 자바스크립트 문법은 실행안되도록 차단해놓음
+
+        const name2 = "<img src='x' onerror='alert(1)'>";
+        // onerror는 img로딩이 실패했을 때 실행되는 것.
+        txt.innerHTML = name; // shows the alert 자바스크립트 실행될 우려가 있다.
+        // 따라서, 단순 텍스트를 삽입 할 땐 textContent를 사용하십시오
+    </script>
+</body>
+</html>

@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <script>
+      // 객체지향은 프로그래밍 방법론, 프로그램을 작성할 때 객체들을 만들어 서로 소통하도록하는 방법
+      // 자바스크립트 객체는 데이터의 묶음 이라면 객체 지향의 객체는 우리가 표현하고자 하는 구체적인 사물을 추상적으로 표현한것 이라고 볼 수 있습니다.
+      // 프로퍼티는 상태를 말함.
+      const me = {
+        name: "웨이드",
+        address: "제주도 제주시 인다 1길",
+        phoneNum: "010-8001-6536",
+        canWalk: function () {
+          console.log("웨이드가 걷는다.");
+        },
+        teaching: function (student) {
+          student.levelUp();
+        },
+      };
+
+      const student = {
+        level: 1,
+        levelUp: function () {
+          this.level++;
+        },
+      };
+
+      me.teaching(student);
+
+      const nada = {
+        name: "수진",
+        age: 28,
+        study: function (bankAccount) {
+          console.log("공부하면 돈 들어오지롱");
+          bankAccount.moneyUp();
+        },
+      };
+
+      const bankAccount = {
+        accountNum: "5050-3424-1-22",
+        money: 500,
+        moneyUp: function () {
+          this.money += 10000;
+        },
+      };
+
+      nada.study(bankAccount);
+
+      ///////// 위의 것을 생성자함수와 프로토타입을 사용해서 만들기
+      function Nada(name, age) {
+        this.name = name;
+        this.age = age;
+      }
+      Nada.prototype.study = function (bankAccount) {
+        console.log("공부하면 돈 들어오지롱");
+        bankAccount.moneyUp();
+      };
+      function BankAccount(accountNum, money) {
+        this.accountNum = accountNum;
+        this.money = money;
+      }
+      BankAccount.prototype.moneyUp = function () {
+        this.money += 10000;
+      };
+
+      let nada1 = new Nada("수진", "28");
+      let bank1 = new BankAccount("2222", 500);
+
+      nada1.study(bank1);
+
+      ///////////////////////////// 생성자 함수
+      function Robot(foodArr) {
+        this.food = foodArr;
+        this.randomSelect = function () {
+          const index = Math.floor(Math.random() * foodArr.length);
+
+          console.log(
+            `오늘의 저녁메뉴는 ${this.food[index]}입니다. 마음에 안들어도 그냥 드세요 주인님.`
+          );
+        };
+      }
+
+      let robot1 = new Robot([
+        "페퍼로니피자",
+        "냉면",
+        "마라탕",
+        "삼겹살",
+        "샐러드",
+        "엄마밥",
+      ]);
+
+      let robot2 = new Robot([
+        "하와이안피자",
+        "비빔냉면",
+        "마라샹궈",
+        "가브리살",
+        "치킨샐러드",
+        "아빠밥",
+      ]);
+
+      //robot1.randomSelect()
+
+      console.log(robot1.randomSelect === robot2.randomSelect);
+
+      ////////////////////////////////// 프로토타입
+      function newRobot(foodArr) {
+        this.food = foodArr;
+      }
+
+      // //////////
+      newRobot.prototype.randomSelect = function () {
+        const index = Math.floor(Math.random() * foodArr.length);
+
+        console.log(
+          `오늘의 저녁메뉴는 ${this.food[index]}입니다. 마음에 안들어도 그냥 드세요 주인님.`
+        );
+      };
+
+      let robotA = new newRobot([
+        "페퍼로니피자",
+        "냉면",
+        "마라탕",
+        "삼겹살",
+        "계란샐러드",
+        "엄마밥",
+      ]);
+
+      let robotB = new newRobot([
+        "하와이안피자",
+        "비빔냉면",
+        "마라샹궈",
+        "가브리살",
+        "치킨샐러드",
+        "아빠밥",
+      ]);
+
+      console.log(robotA.randomSelect === robotB.randomSelect);
+
+      ////////////////////////// 프로토타입
+      function NewFactory2(name) {
+        this.name = name;
+      }
+
+      NewFactory2.prototype.sayYourName = function () {
+        console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      };
+
+      //  robot1.__proto__.sayYourName = function () {
+      //    console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+      //  };
+      let robot3 = new NewFactory2("로봉");
+      let robot4 = new NewFactory2("로방");
+    </script>
+  </body>
+</html>
+<!-- 
+    
+hoxy~
+
+```javascript
+robot1.__proto__.sayYourName = function(){
+            console.log(`삐리비리. 제 이름은 ${this.name}입니다. 주인님.`);
+        }
+```
+이렇게 접근해서 메서드를 추가해도 생성자함수 prototype에 추가되고, 각 인스턴스들은 같은 프로퍼티를 참조하는건가요?
+
+  -->

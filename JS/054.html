@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    점심 식단
+    <article id="container">
+        <ul>
+            <li>탕수육</li>
+            <li class="item-second">유산슬</li>
+            <li>짜장면</li>
+        </ul>
+    </article>
+
+    저녁 식단
+    <article>
+        <ul>
+            <li>된장국</li>
+            <li class="item-second">김치찌게</li>
+            <li>해장국</li>
+        </ul>
+    </article>
+    <button class="blue">눌러!</button>
+
+    <script>
+        // 배운 문법을 바탕으로 HTML 요소들 중 첫 번째 item-second클래스와 첫 번째 li를 콘솔로 출력
+        
+        // 노드트리에서 body까지는 이미 찾아서 contain에 넣은 것.
+        const contain = document.getElementById("container");
+
+        // contain.으로 시작하므로 body뒤 부터 찾아냄. 따라서 탐색을 더 빠르게 함.
+        // 빨리 로딩되면 seo관점에서도 이점을 준다. 빨리 정보를 찾아냄 -> 사용자 만족도가 높음 -> 검색어 최상단에 뜸
+        console.log(contain.getElementsByClassName("item-second")[0]);
+        console.log(contain.getElementsByTagName("li")[0]);
+
+        // css 선택자로 단일요소 찾기
+        console.log(document.querySelector("li"));
+
+        // css 선택자로 모든 요소 찾기
+        console.log(document.querySelectorAll("li"));
+        console.log(document.querySelectorAll("li")[3]);
+
+        console.log(container.querySelectorAll('li')) ;
+
+        // HTMLCollection에는 livedom
+        // NodeList는 livedom이 아니다. 
+
+
+        const myBtn = document.querySelector('button');
+
+        myBtn.addEventListener('click', function(){
+            // blue 라는 클래스의 속성 값을 지정 할 수 있습니다.
+            // myBtn.classList.add('blue');
+
+            //myBtn.classList.remove('blue'); // 클래스를 제거
+            myBtn.classList.toggle('blue'); // 클래스를 토글. 없으면 넣어주고, 있으면 제거
+            //console.log(myBtn.classList.contains('blue')); // 해당하는 클래스가 있는지 확인
+
+        })
+        </script>
+</body>
+</html>
+<!-- 오토박싱... 잠깐 객체화해서 쓸거쓰고 다시 원시자료형으로 반환-->

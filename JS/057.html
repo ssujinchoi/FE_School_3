@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <p></p>
+    <input type="text">
+    <button>Write Something!</button>
+
+    <script>
+        const myBtn = document.querySelector("button");
+        const myP = document.querySelector("p");
+        const myInput = document.querySelector("input");
+
+        //myBtn.addEventListener('click', function(){
+        //    myP.textContent = myInput.value;
+        //});
+
+        myInput.addEventListener('input', ()=>{
+            myP.textContent = myInput.value; // 코드도 텍스트로 인식 -> 빠른 로딩을 위해선 textContent를 써야한다.
+            //myP.innerText= myInput.value; // 렌더링된 텍스트 콘텐츠를 나타냄
+            // 위 두개는 무슨 차이가...?
+        });
+
+        // 문자열로 html작성
+        myP.innerHTML = "<strong>I'm Strong!!</strong>";
+        //myP.outerHTML = "<div></div>";
+
+        // innerHTML의 과정. 코드는 위가 간단하지만 빠른건 이거다
+        const elStrong = document.createElement('strong');
+        const myTxt = document.createTextNode("I'm strong!");
+
+        elStrong.appendChild(myTxt);
+        myP.appendChild(elStrong);
+
+    </script>
+</body>
+</html>
