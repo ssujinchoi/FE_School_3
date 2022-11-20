@@ -14,8 +14,10 @@
         integrity="sha512-kp7YHLxuJDJcOzStgd6vtpxr4ZU9kjn77e6dBsivSz+pUuAuMlE2UTdKB7jjsWT84qbS8kdCWHPETnP/ctrFsA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script data-plugins="transform-es2015-modules-umd" type="text/babel" src="./Main.js"></script>
+    <!--cdn을 이용한 리액트 - jsx문법 사용을 위해서는 babel이 필요한데, babel에서는 imoprt문법을 사용할 수 없다.
+    html에서 import를 쓰는방법은 쓰지않는다.
+    type="module" 과 text/babel은 동시에 사용할 수가 없다. 즉, jsx문법 사용을 위해 type="module"방식을 쓸수없다. -->
     <script data-plugins="transform-es2015-modules-umd" type="text/babel">
-        // html에서 import를 쓰는방법은 쓰지않는다.
         import Main from "./Main.js"
 
         Main()
