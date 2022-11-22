@@ -8,3 +8,9 @@ console.log(profile.age);
 //    name : '길동', 
 //    age: 10
 //}
+
+// 구버전
+//const profile = require('./003.js')
+
+//console.log(profile.name)
+//console.log(profile.age)

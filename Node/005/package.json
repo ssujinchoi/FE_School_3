@@ -1,7 +1,7 @@
+
 {
   "name": "005",
   "version": "1.0.0",
-  "description": "",
   "main": "002.js",
   "type": "module",
   "scripts": {
@@ -9,5 +9,6 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "description": ""
 }
