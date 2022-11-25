@@ -3,8 +3,7 @@ import One from './components/One.js'
 import Two from './components/Two.js'
 
 function App() {
-  const style = {backgroundColor:"black", color:"white"}
-
+  const style = {backgroundColor:"black", color:"white"};
   return (
     <div>
 
@@ -26,7 +25,7 @@ function App() {
       {/* <h2 class="hi">hello</h2>
       <h2 class="hello">hello</h2> */}
     </div>
-  )
+  );
 }
 
 export default App;
