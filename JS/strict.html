@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //function test() {
+        //    var str = 'ddd' // var선언시 스코프가 있다.
+        //    str = 'ddd' // 키워드 없이 선언시 전역이 된다.
+        //}
+        'use strict'
+        str = "hello strict"
+        //var로 하면 일부 예약어 변수명도 에러가 뜨지않음
+        //let으로 써야한다.
+        var undefined = 'undefined' 
+        var Infinity = 100
+
+        const employee = {
+            firstname: 'Jhon',
+            lastname: 'Doe'
+        }
+        console.log(employee.firstname)
+        delete employee.firstname
+        console.log(employee);
+        delete Object.prototype
+
+        function myFunc(a, a, b) {
+            console.log(a + a + b);
+        }
+
+        myFunc(1, 2, 3) // usestrict 해제하면 7 나옴. a = 1 -> a = 2로 바뀜
+    </script>
+</body>
+</html>
